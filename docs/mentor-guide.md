@@ -88,4 +88,7 @@ After the first five lessons, possible additions are:
 7. add Dockerfiles and Docker Compose for local startup;
 8. introduce real authentication;
 9. extend the Delivery lifecycle without geographic or courier-tracking logic;
-10. consider payment or geographic features only after the foundation is stable.
+10. consider payment or geographic features only after the foundation is stable;
+11. collect common mistakes from student reviews and add them to the relevant support topics;
+12. design self-check questions carefully and add them to support topics;
+13. add focused or runnable examples only where student reviews show they are needed.

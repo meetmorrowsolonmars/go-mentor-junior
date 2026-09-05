@@ -8,14 +8,24 @@ This lesson covers project organization, domain types, route wiring, and a simpl
 
 Each student completes the common tasks and one assigned service track.
 
+## Support material
+
+These optional pages provide starting points for unfamiliar topics:
+
+- [Project layout](topics/01-project-layout.md)
+- [Application layers](topics/02-application-layers.md)
+- [HTTP server lifecycle](topics/03-server-lifecycle.md)
+- [Health probes](topics/04-health-probes.md)
+- [Development commands](topics/05-development-commands.md)
+
 ## Common tasks
 
 1. Initialize a Go module for the assigned service.
 2. Choose and create the project layout.
 3. Create one executable that starts one HTTP server.
-4. Read the HTTP listen address from configuration.
+4. Read the HTTP listen address from `HTTP_ADDR`, with a documented default.
 5. Shut the server down gracefully when the process receives an interrupt signal.
-6. Implement `GET /healthz`; it must return `200 OK` while the service is running.
+6. Implement `GET /livez` and `GET /readyz`; both must return `200 OK` with an empty body while the service is running.
 7. Derive the service's domain types from the project and API contract.
 8. Register every API route owned by the assigned service.
 9. Return responses using the field names and shapes from the contract.
@@ -51,7 +61,7 @@ The internal package structure, interface design, constructors, libraries, and d
 2. The documented formatting and vetting commands succeed.
 3. Exactly one service process and one HTTP server are created.
 4. The service starts without a database or another running service.
-5. `GET /healthz` returns `200 OK`.
+5. `GET /livez` and `GET /readyz` return `200 OK` with empty bodies.
 6. Every assigned route is registered and accepts its documented HTTP method.
 7. Stub responses use the contract's JSON field names and value types.
 8. At least one assigned endpoint executes a complete request-to-stub-to-response path.
