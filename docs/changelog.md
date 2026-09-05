@@ -6,7 +6,7 @@ This file records student-visible changes to the project specification, API cont
 
 - No changes.
 
-## 0.1.0 - 2026-09-05
+## 2026-09-05
 
 - Defined the Order Service and Restaurant Service boundaries.
 - Defined Cart, Order, Restaurant, Menu Item, and Delivery behavior.
