@@ -6,6 +6,7 @@ This repository is a practical Go course built around a small food-delivery syst
 
 - [Project specification and API contract](docs/project.md)
 - [Lesson 1: project layout](lessons/01-project-layout/README.md)
+- [Lesson 2: in-memory business logic and tests](lessons/02-in-memory-and-tests/README.md)
 - [Architecture views](docs/architecture.md)
 - [Development workflow](docs/development-workflow.md)
 - [Specification changelog](docs/changelog.md)

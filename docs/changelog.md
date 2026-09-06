@@ -4,7 +4,7 @@ This file records student-visible changes to the project specification, API cont
 
 ## Unreleased
 
-- No changes.
+- Added Lesson 2: complete in-memory business logic and unit tests for HTTP, application, and storage boundaries.
 
 ## 2026-09-05
 

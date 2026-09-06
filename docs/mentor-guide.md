@@ -23,6 +23,16 @@ After the first lesson, a student should be able to:
 - connect HTTP routes to deterministic stub behavior;
 - document how to build, run, format, and vet the service.
 
+After the second lesson, a student should also be able to:
+
+- implement a service's business rules with in-memory storage;
+- make mutable in-memory state safe for concurrent access;
+- test HTTP handlers with `httptest`;
+- test application behavior using mocks for provider dependencies;
+- test in-memory stores directly;
+- use statement coverage as a testing guardrail;
+- use the race detector to find unsafe concurrent access.
+
 Add new objectives here only when the corresponding lesson is introduced. Planned lessons are not yet student requirements.
 
 ## Mentor-provided dependencies
@@ -53,25 +63,25 @@ These are not hidden requirements. A later lesson may introduce one of them expl
 
 ## Lessons
 
-### Current: Lesson 1 — Project layout
+### Lesson 1 — Project layout
 
 Create one runnable HTTP service for the assigned track, define the domain and transport types needed by its contract, register its routes, and return deterministic stub responses. See [Lesson 1](../lessons/01-project-layout/README.md).
 
-### Planned: Lesson 2 — API definition
+### Current: Lesson 2 — In-memory business logic and tests
 
-Represent each service contract in OpenAPI and validate the documents automatically.
+Implement the complete behavior of the assigned service using in-memory stores, then test its HTTP, application, and storage boundaries. See [Lesson 2](../lessons/02-in-memory-and-tests/README.md).
 
-### Planned: Lesson 3 — In-memory implementation
-
-Implement the business behavior with in-memory repositories and stubs for external dependencies.
-
-### Planned: Lesson 4 — Tests
-
-Test domain rules, application behavior, HTTP mapping, and complete in-process scenarios.
-
-### Planned: Lesson 5 — Persistent storage
+### Planned: Lesson 3 — Persistent storage
 
 Add PostgreSQL repositories, migrations, transactions, and repository integration tests.
+
+### Planned: Lesson 4 — Service communication
+
+Connect the Order and Restaurant Services and handle timeouts, dependency errors, and contract compatibility.
+
+### Planned: Lesson 5 — Observability
+
+Add structured logs, metrics, and distributed traces.
 
 The contents and order of planned lessons may change. A lesson becomes authoritative only when its own description is published in `lessons/`.
 
@@ -79,16 +89,14 @@ The contents and order of planned lessons may change. A lesson becomes authorita
 
 After the first five lessons, possible additions are:
 
-1. connect the real Order and Restaurant Services;
-2. add client timeouts, error handling, and contract tests;
-3. introduce request idempotency and safe retries;
-4. add structured logs, metrics, and distributed traces;
-5. publish domain events through Kafka;
-6. make event publishing reliable with a transactional outbox;
-7. add Dockerfiles and Docker Compose for local startup;
-8. introduce real authentication;
-9. extend the Delivery lifecycle without geographic or courier-tracking logic;
-10. consider payment or geographic features only after the foundation is stable;
-11. collect common mistakes from student reviews and add them to the relevant support topics;
-12. design self-check questions carefully and add them to support topics;
-13. add focused or runnable examples only where student reviews show they are needed.
+1. represent service contracts with Protobuf and gRPC-Gateway and generate an OpenAPI contract;
+2. introduce request idempotency and safe retries;
+3. publish domain events through Kafka;
+4. make event publishing reliable with a transactional outbox;
+5. add Dockerfiles and Docker Compose for local startup;
+6. introduce real authentication;
+7. extend the Delivery lifecycle without geographic or courier-tracking logic;
+8. consider payment or geographic features only after the foundation is stable;
+9. collect common mistakes from student reviews and add them to the relevant support topics;
+10. design self-check questions carefully and add them to support topics;
+11. add focused or runnable examples only where student reviews show they are needed.
